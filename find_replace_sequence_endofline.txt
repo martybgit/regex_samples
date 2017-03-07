@@ -1,0 +1,32 @@
+Find lines without character "." then delete the line
+Find: ^[^.]*$\n
+Replace:
+
+Example:
+	EdVisitKey : integer
+	Surrogate key used to identify the record
+	IdType : string
+	This column should no longer be used
+	Id : string
+	This coulumn should no longer be used
+
+Becomes:
+	EdVisitKey : integer
+	IdType : string
+	Id : string
+
+************************************************************************************************
+
+Find a character sequence " =", delete the sequence all the way to the end of line:
+Find: ^(.*?) :.*$
+Replace: \1
+
+Example:
+	EdVisitKey : integer
+	IdType : string
+	Id : string
+
+Becomes:
+	EdVisitKey
+	IdType
+	Id
